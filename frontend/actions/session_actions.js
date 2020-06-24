@@ -31,8 +31,18 @@ export const login = currentUser => dispatch =>
 
 export const signup = newUser => dispatch => 
     ApiUtil.signup(newUser)
-    .then(user => dispatch(receiveCurrentUser(user)))
+    .then((user) => {
+        dispatch(removeSessionErrors())
+        dispatch(receiveCurrentUser(user))
+    },(errors) => {
+        dispatch(receieveSessionErrors(errors))
+    })
 
 export const logout = () => dispatch => 
     ApiUtil.logout()
-    .then(() => dispatch(logoutCurrentUser()))
+    .then(() => {
+        dispatch(logoutCurrentUser())
+    },(errors) => {
+        dispatch(receieveSessionErrors(errors))
+    })
+
