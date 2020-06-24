@@ -8,6 +8,6 @@
 
 User.destroy_all
 
-user1 = User.create!(email: "user1@email.com", password: "123456")
-user2 = User.create!(email: "user2@email.com", password: "123456")
-user3 = User.create!(email: "user3@email.com", password: "123456")
+user1 = User.create!(username: "aaron", email: "user1@email.com", password: "123456")
+user2 = User.create!(username: "ali",email: "user2@email.com", password: "123456")
+user3 = User.create!(username: "veli",email: "user3@email.com", password: "123456")
