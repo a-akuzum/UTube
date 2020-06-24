@@ -24,5 +24,14 @@ const removeSessionErrors = () => ({
     errors
 })
 
-export const login = currentUser => dispatch => ApiUtils.signUp(currentUser)
-.then(user => dispatch(receiveCurrentUser(user)))
+export const login = currentUser => dispatch => 
+    ApiUtil.login(currentUser)
+    .then(user => dispatch(receiveCurrentUser(user)))
+
+export const signup = newUser => dispatch => 
+    ApiUtil.signup(newUser)
+    .then(user => dispatch(receiveCurrentUser(user)))
+
+export const logout = () => dispatch => 
+    ApiUtil.logout()
+    .then(() => dispatch(logoutCurrentUser()))
