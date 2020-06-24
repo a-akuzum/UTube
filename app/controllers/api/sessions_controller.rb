@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
             params[:user][:password]
         ]
         @user = User.find_by_credentials(*credentials)
-        if @user.save
+        if @user
             login(@user)
             render 'api/users/show'
         else
@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
             logout
             render json: {}
         else
-            render json: ['Something went wrong'], status: 404
+            render json: { message: 'Logout Aborted'}, status: 404
         end
     end
 
