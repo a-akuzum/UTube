@@ -13,19 +13,21 @@ const Modal = ({ modal, closeModal }) => {
 
     switch (modal) {
         case 'login':
-          component = <LoginFormContainer />;
-          modalClass = 'modal-background';
-          modalChildClass = 'modal-child';
-          break;
+            component = <LoginFormContainer />
+            modalClass = 'modal-background1'
+            modalChildClass = 'modal-child1'
+            break;
         case 'signup':
-          component = <SignupFormContainer />;
-          break;
+            component = <SignupFormContainer />
+            break;
         case 'logout':
-        component = <LogoutFormContainer />;
+            component = <LogoutFormContainer />
+            modalClass = 'modal-background2'
+            modalChildClass = 'modal-child2'
         break;
         default:
-          return null;
-      }
+            return null;
+    }
 
       return (
         <div className={modalClass} onClick={closeModal}>
@@ -33,7 +35,7 @@ const Modal = ({ modal, closeModal }) => {
             { component }
           </div>
         </div>
-      );
+      )
     }
     
     const mapStateToProps = state => {
