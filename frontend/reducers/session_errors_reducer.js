@@ -4,7 +4,7 @@ import {
     REMOVE_SESSION_ERRORS 
     } from '../actions/error_actions'
 
-export default (state = [], action) => {
+const sessionErrorsReducer = (state = [], action) => {
     switch (action.type) {
         case RECEIVE_USER:
             return []
@@ -17,3 +17,4 @@ export default (state = [], action) => {
     }
 }
 
+export default sessionErrorsReducer
