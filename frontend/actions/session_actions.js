@@ -1,48 +1,48 @@
-import * as ApiUtil from '../util/session_api_util';
-import {  
-    receieveSessionErrors, 
-    removeSessionErrors
-    } from './error_actions'
+import * as APIUtil from '../util/session_api_util';
+import { receiveErrors, clearErrors } from './error_actions'
 
 
-export const RECEIVE_USER = 'RECEIVE_USER'
-export const LOGOUT_USER = 'LOGOUT_USER'
+export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 
 
-const receiveCurrentUser = user => ({
-    type: RECEIVE_USER,
-    user
-})
+const receiveCurrentUser = (currentUser) => {
+  return {
+    type: RECEIVE_CURRENT_USER,
+    currentUser: currentUser,
+  };
+};
 
-const logoutCurrentUser = () => ({
-    type: LOGOUT_USER
-})
+const logoutCurrentUser = () => {
+  return {
+    type: LOGOUT_CURRENT_USER,
+  }
+};
 
 
+export const signUp = (user) => {
+  return (dispatch) => {
+    return APIUtil.signUp(user).then(
+      user => dispatch(receiveCurrentUser(user)),
+      err => dispatch(receiveErrors(err.responseJSON))
+    );
+  };
+};
 
-export const login = currentUser => dispatch => 
-    ApiUtil.login(currentUser)
-    .then((user) => {
-        dispatch(removeSessionErrors())
-        dispatch(receiveCurrentUser(user))
-    }, (errors) => {
-        dispatch(receieveSessionErrors(errors))
-    })
+export const logIn = (user) => {
+  return (dispatch) => {
+    return APIUtil.logIn(user).then( 
+      user => dispatch(receiveCurrentUser(user)),
+      err => dispatch(receiveErrors(err.responseJSON))
+    );
+  };
+};
 
-export const signup = newUser => dispatch => 
-    ApiUtil.signup(newUser)
-    .then((user) => {
-        dispatch(removeSessionErrors())
-        dispatch(receiveCurrentUser(user))
-    },(errors) => {
-        dispatch(receieveSessionErrors(errors))
-    })
-
-export const logout = () => dispatch => 
-    ApiUtil.logout()
-    .then(() => {
-        dispatch(logoutCurrentUser())
-    },(errors) => {
-        dispatch(receieveSessionErrors(errors))
-    })
-
+export const logOut = () => {
+  return (dispatch) => {
+    return APIUtil.logOut().then( 
+      res => dispatch(logoutCurrentUser(res))
+      // err => dispatch(receiveErrors(err.responseJSON))
+    );
+  };
+};
