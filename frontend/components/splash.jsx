@@ -5,8 +5,6 @@ const Splash = () => {
   return (
     <div>
       <NavTopContainer />
-      <div className="">
-      </div>
     </div>
   )
 }

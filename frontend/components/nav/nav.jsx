@@ -15,24 +15,17 @@ const Nav = (props) => {
         <div
           className=''
           onClick={sideFunc}>
-          <i className=""></i>
         </div>
 
         <div className=''>
           <Link to='/' className=''>
-            <i className=""></i>
-            <span className=''>UTube</span>
+            <span className='utube-name'>UTube</span>
           </Link>
         </div>
       </div>
 
 
       <div className=''>
-        <div className="">
-          <Link to='/upload' >
-              <i className=""></i>
-          </Link>
-        </div>
         <GreetingContainer />
       </div>
     </div>

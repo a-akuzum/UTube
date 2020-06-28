@@ -5,6 +5,10 @@ const Greeting = (props) => {
 
   if (props.currentUser) {
     return (
+      <div>
+        <div>
+          <span>welcome {props.currentUser.username}</span>
+        </div>
       <div className="">
         <button 
           className=''
@@ -12,10 +16,11 @@ const Greeting = (props) => {
           <span className=''>Log Out</span>
         </button>
       </div>
+    </div>
     );
   } else {
     return (
-      <div className="">
+      <div className="signin-button-container">
         <Link className='' to='/login'>
           <p className="">SIGN IN</p>
         </Link>
