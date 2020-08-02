@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Greeting = (props) => {
 
@@ -9,20 +9,19 @@ const Greeting = (props) => {
         <div>
           <span>welcome {props.currentUser.username}</span>
         </div>
-      <div className="">
-        <button 
-          className=''
-          onClick={props.logout} >
-          <span className=''>Log Out</span>
+      <div className="logout-container">
+        <button className='logout-button' onClick={props.logout} >
+          <span className='logout-button-text'>Log Out</span>
         </button>
       </div>
     </div>
-    );
+    )
   } else {
     return (
-      <div className="signin-button-container">
-        <Link className='' to='/login'>
-          <p className="">SIGN IN</p>
+      <div className="login-button-container">
+        <Link className='login-nav' to='/login'>
+          <i class="fas fa-sign-in-alt"></i>
+          <p className="login-button-text">SIGN IN</p>
         </Link>
       </div>
     );

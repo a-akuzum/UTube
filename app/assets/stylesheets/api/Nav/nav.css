@@ -1,11 +1,41 @@
-.signin-button-container {
-    display: flex;
-    /* display: -webkit-flex; */
-    justify-content: flex-end;
+/* Greetings page --- #/--- */
+/* SIGN IN  */
+.login-button-container {
+    width: 106.39px;
+    height: 38px;   
 }
 
-.utube-name {
+.login-nav {
     display: flex;
-    color: red;
-}
+    text-decoration: none;
+    color: #0d66da;
+    align-items: center;
+    border: solid 1px #0d66da;
+    padding: 10px 8px;
+    border-radius: 2px;
+    font-size: 18px;
+  }
+
+  .login-nav:hover {
+    background-color: rgb(238, 235, 235);
+  }
+  .logout-button {
+    display: flex;
+    text-decoration: none;
+    color: #0000;
+    align-items: center;
+    border: solid 1px #0d66da;
+    padding: 10px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .logout-button-text{
+      color: black;
+  }
+
+  .logout-button:hover {
+    background-color: rgb(238, 235, 235);
+  }
 
