@@ -10,12 +10,14 @@ import Splash from './splash';
 const App = () => {
   return (
     <div>
+
       <Switch>
         <AuthRoute exact path='/signup' component={SignupFormContainer} />
         <AuthRoute exact path='/login' component={LoginFormContainer} />
         <Route exact path='/' component={Splash} />
         <Redirect to='/' component={Splash} />
       </Switch>
+      
     </div>
   )
 }

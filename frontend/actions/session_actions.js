@@ -46,15 +46,3 @@ export const logOut = () => {
   };
 };
 
-const receiveErrors = (errors) => {
-  return {
-    type: RECEIVE_SESSION_ERRORS,
-    errors: errors
-  }
-}
-
-const clearErrors = () => {
-  return {
-    type: CLEAR_ERRORS
-  }
-}
