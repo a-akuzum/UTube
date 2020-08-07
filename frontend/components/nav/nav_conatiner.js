@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/ui_action';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import Nav from './nav';
 
 const mapStateToPorops = (state) => {

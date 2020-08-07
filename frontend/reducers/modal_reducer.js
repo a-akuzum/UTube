@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/ui_action';
+import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
   
 //   let defaultState = {
 //     modal: false
