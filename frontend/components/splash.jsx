@@ -1,10 +1,10 @@
 import React from 'react';
-import NavTopContainer from './nav/nav_conatiner';
+import NavContainer from './nav/nav_conatiner';
 
 const Splash = () => {
   return (
     <div>
-      <NavTopContainer />
+      <NavContainer />
     </div>
   )
 }
