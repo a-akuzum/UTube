@@ -12,6 +12,7 @@ const App = () => {
   return (
     <div>
       {/* <Modal /> */}
+      
       <Switch>
         <AuthRoute exact path='/signup' component={SignupFormContainer} />
         <AuthRoute exact path='/login' component={LoginFormContainer} />
